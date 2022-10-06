@@ -1,0 +1,260 @@
+object CalculatorForm: TCalculatorForm
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'BasicCalc'
+  ClientHeight = 308
+  ClientWidth = 218
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  DesignerMasterStyle = 1
+  object btnCE: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    Text = 'CE'
+    OnClick = btnCEClick
+  end
+  object btnC: TButton
+    Position.X = 64.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+    Text = 'C'
+    OnClick = btnCClick
+  end
+  object btnBackSpace: TButton
+    StyledSettings = []
+    Position.X = 112.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 18
+    TextSettings.Font.Family = '(Default)'
+    TextSettings.Trimming = None
+    OnClick = btnBackSpaceClick
+    object Image1: TImage
+      MultiResBitmap = <
+        item
+          Width = 16
+          Height = 16
+          PNG = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            61000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            00D549444154384FC5D23D0B415118C0F1CB22317BD9A5946C5242B1F806769B
+            8FA0AC26BE80DD22B314990C1693B23328CA07F092F07F4E8774EFF192817FFD
+            AE9E53F774DC8EF5F75CFAD79EACE7105093B33D0638AAC996BCDCC1E58D268C
+            D5203B17D464AEAB392AE2848A9A9E77DFC02D0F5D1472F4365AB24075F491C6
+            124918F3638E093CB2A04B608B3346F042729CA08A18CA38C8C2A7DD369063AF
+            207F21240BBA12A6C82082389E16C60C0BC8F77895F123AE91C70663A4F0553E
+            F460BA3C8F1A787995B308AAC9D90E4318AFF22FB3AC2B857F352C2581D0D900
+            00000049454E44AE426082}
+        end>
+      Align = Center
+      Enabled = False
+      Size.Width = 16.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object btnDivide: TButton
+    Tag = 2
+    Position.X = 160.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 19
+    Text = '/'
+    OnClick = btnOperatorClick
+  end
+  object btn7: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    Text = '7'
+    OnClick = btnNumericClick
+  end
+  object btn8: TButton
+    Position.X = 64.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Text = '8'
+    OnClick = btnNumericClick
+  end
+  object btn9: TButton
+    Position.X = 112.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Text = '9'
+    OnClick = btnNumericClick
+  end
+  object btnMultiply: TButton
+    Tag = 1
+    Position.X = 160.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 15
+    Text = '*'
+    OnClick = btnOperatorClick
+  end
+  object btn4: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = '4'
+    OnClick = btnNumericClick
+  end
+  object btn5: TButton
+    Position.X = 64.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = '5'
+    OnClick = btnNumericClick
+  end
+  object btn6: TButton
+    Position.X = 112.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = '6'
+    OnClick = btnNumericClick
+  end
+  object btnSubtract: TButton
+    Tag = 4
+    Position.X = 160.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = '-'
+    OnClick = btnOperatorClick
+  end
+  object btn1: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = '1'
+    OnClick = btnNumericClick
+  end
+  object btn2: TButton
+    Position.X = 64.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = '2'
+    OnClick = btnNumericClick
+  end
+  object btn3: TButton
+    Position.X = 112.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = '3'
+    OnClick = btnNumericClick
+  end
+  object btnAdd: TButton
+    Tag = 3
+    Position.X = 160.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = '+'
+    OnClick = btnOperatorClick
+  end
+  object btnInvertSign: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = '+/-'
+    OnClick = btnInvertSignClick
+  end
+  object btn0: TButton
+    Position.X = 64.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = '0'
+    OnClick = btnNumericClick
+  end
+  object btnDecimal: TButton
+    Position.X = 112.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = '.'
+    OnClick = btnDecimalClick
+  end
+  object btnEqual: TButton
+    Position.X = 160.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = '='
+    OnClick = btnEqualClick
+  end
+  object edDisplay: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 20
+    Text = '0'
+    TextSettings.Font.Family = '(Default)'
+    TextSettings.Font.Size = 20.000000000000000000
+    TextSettings.HorzAlign = Trailing
+    Position.X = 16.000000000000000000
+    Position.Y = 15.000000000000000000
+    Size.Width = 184.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Style, FontColor]
+  end
+end
