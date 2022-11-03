@@ -62,7 +62,7 @@ type
     procedure DisplayZero;
     procedure ApplyOperator(MathOperator: TMathOperator);
     procedure ApplyNumericInput(const InputText: string);
-    procedure Calculate;
+    function Calculate: Boolean;
     procedure ApplyDecimal;
     procedure ApplyBackspace;
     procedure ClearAll;
@@ -139,15 +139,29 @@ begin
   ApplyNumericInput((Sender as TButton).Text);
 end;
 
-procedure TCalculatorForm.Calculate;
+function TCalculatorForm.Calculate: Boolean;
+var
+  TempTerm: Double;
 begin
+  Result := True;
   //ensure we can calculate assuming the displayvalue is the second term
   if FCalculator.CanCalc then
   try
-    FCalculator.SecondTerm := StrToFloat(edDisplay.Text);
-    edDisplay.Text := FloatToStr(FCalculator.Calc);
+    TempTerm := StrToFloat(edDisplay.Text);
+    if (TempTerm = 0) and (FCalculator.MathOperator = TMathOperator.opDivide) then
+    begin
+      Result := False;
+      edDisplay.Text := 'Division by zero is undefined';
+      FTermState := New;
+      edDisplay.SelectAll;  //select term so it can be replaced with a valid one
+    end
+    else
+    begin
+      FCalculator.SecondTerm := TempTerm;
+      edDisplay.Text := FloatToStr(FCalculator.Calc);
+    end;
   except
-    ;
+    Result := False;
   end;
 end;
 
@@ -169,11 +183,14 @@ begin
 end;
 
 procedure TCalculatorForm.ApplyOperator(MathOperator :TMathOperator);
+var
+  Success: Boolean;
 begin
   //if we have both terms
-  Calculate;
+ Success := Calculate;
 
   //Sets calculator operand and first term
+  if Success then
   try
     FCalculator.FirstTerm := StrToFloat(edDisplay.Text);
     FCalculator.MathOperator := MathOperator;

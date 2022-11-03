@@ -248,12 +248,11 @@ object CalculatorForm: TCalculatorForm
     TabOrder = 20
     Text = '0'
     TextSettings.Font.Family = '(Default)'
-    TextSettings.Font.Size = 20.000000000000000000
-    TextSettings.HorzAlign = Trailing
-    Position.X = 16.000000000000000000
-    Position.Y = 15.000000000000000000
-    Size.Width = 184.000000000000000000
-    Size.Height = 41.000000000000000000
+    TextSettings.Font.Size = 15.000000000000000000
+    Position.Y = 8.000000000000000000
+    Enabled = False
+    Size.Width = 218.000000000000000000
+    Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
     StyledSettings = [Style, FontColor]
   end
